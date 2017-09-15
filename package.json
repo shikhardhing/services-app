@@ -1,0 +1,44 @@
+{
+  "name": "services-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node dist/bin/www",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json --copy-files && mkdirp dist/img",
+    "lint": "standard ",
+    "test": "cd dist && mocha test/*.js"
+  },
+  "standard": {
+    "ignore": [
+      "**/coverage/",
+      "**/dist/",
+      "**/docs/",
+      "**/test/"
+    ]
+  },
+  "author": "Shikhar Dhing",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "express": "^4.15.4",
+    "fast-json-patch": "^2.0.5",
+    "istanbul": "^0.4.5",
+    "jimp": "^0.2.28",
+    "jsdoc": "^3.5.5",
+    "jsonwebtoken": "^8.0.1",
+    "mocha": "^3.5.3",
+    "morgan": "^1.8.2",
+    "standard": "^10.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-istanbul": "^4.1.4",
+    "babel-preset-env": "^1.6.0",
+    "cross-env": "^5.0.5",
+    "mkdirp": "^0.5.1",
+    "nyc": "^11.2.1",
+    "rimraf": "^2.6.1"
+  }
+}
